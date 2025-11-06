@@ -1,0 +1,26 @@
+{
+  "name": "snake402",
+  "version": "1.0.0",
+  "description": "Snake402 - A classic Snake game with x402 integration for pay-to-play and leaderboard rewards",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:client\" \"pnpm dev:server\"",
+    "dev:client": "pnpm --filter client dev",
+    "dev:server": "pnpm --filter server dev",
+    "build": "pnpm --filter shared build && pnpm --filter client build && pnpm --filter server build",
+    "build:client": "pnpm --filter client build",
+    "build:server": "pnpm --filter server build",
+    "build:shared": "pnpm --filter shared build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
